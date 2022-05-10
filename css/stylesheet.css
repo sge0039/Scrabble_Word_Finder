@@ -1,0 +1,105 @@
+/* Table of Contents 
+
+1. Reset
+
+2. Global Styles
+
+3. Typograpgh
+
+4. Layout
+
+5. Components
+    5.1 buttons
+    5.2 cards
+
+6. Navigation
+
+7. Images & Videos
+
+8. Media Queries
+
+*/
+
+
+/* ==============
+    Reset
+    ============= */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    /* Cancel out some differences between browser defaults */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+ 
+* {
+    /* The width of an element will be the size of its border box, not its content box (which is the normal default). */
+    box-sizing: border-box;
+}
+
+main { 
+    /* Make sure the browser knows how to display the HTML5 main element. */
+    display: block;
+}
+
+
+/* ==============
+    Global Styles
+    ============= */
+
+
+
+.hidden-div {
+	display: none;
+}
+
+/* ==============
+    Typograph
+    ============= */
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+
+/* ==============
+    Layout
+    ============= */
+
+.text-center {
+    text-align: center;
+}
+
+
+/* ==============
+    Components
+    ============= */
+
+    /* buttons */
+
+    /* cards */
+
+/* ==============
+    Navigation
+    ============= */
+
+
+/* ==============
+    Images & Videos
+    ============= */
+
+
+/* ==============
+    Media Queries
+    ============= */
+
