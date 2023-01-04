@@ -10,7 +10,9 @@ class ToggleDiv
 
 	hideById (id) {
 		let x = document.getElementById(id)
-		x.style.display = 'none'
+		if (x != null) {
+			x.style.display = 'none'
+		}
 	}
 	
 	showDiv (id) {
