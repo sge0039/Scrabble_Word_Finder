@@ -25,12 +25,10 @@ let controller = new Vue({
 			this.input = ''
 		},
 		setDictionary: function (data) {
-			if (data != undefined) {
-				let arrayMaker = new ArrayMaker()
-				let tempArr = arrayMaker.createArray(data)
-				this.wordFinder.setDictionary(tempArr)
-				this.toggleDiv.hideById('vueFileReader')
-			}
+			let arrayMaker = new ArrayMaker()
+			let tempArr = arrayMaker.createArray(data)
+			this.wordFinder.setDictionary(tempArr)
+			this.toggleDiv.hideById('vueFileReader')
 		},
 		displayLetter: function (foundWords) {
 			let editDiv = new EditDiv()
