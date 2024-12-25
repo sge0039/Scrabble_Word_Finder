@@ -13,7 +13,7 @@ let controller = new Vue({
 		getString: function () {
 			this.toggleDiv.hideDiv()
 			if (this.input.length > 1 && this.checkInput(this.input)) {
-				let foundWords = this.wordFinder.findWords(this.input.toLowerCase())
+				let foundWords = this.wordFinder.findScrabbleWords(this.input.toLowerCase())
 				if (foundWords.length == 0) {
 					this.toggleDiv.showDiv('no_words')
 				} else {
