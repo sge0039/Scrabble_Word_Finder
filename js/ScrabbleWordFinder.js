@@ -11,7 +11,7 @@ class WordFinder
 
 	setWildCounter (userLetters){
 		let count = 0
-		for (char in userLetters){
+		for (let char of userLetters){
 			if(char == "?"){
 				count++
 			}
@@ -20,22 +20,22 @@ class WordFinder
 	}
 
 	removeWildLetters (userLetters) {
-		return userLetters.replace(/?,"")
+		return userLetters.replace("?","")
 		// return userLetters.split("?").join("")
 	}
 
-	covertLettersToArr(userLetters){
-		let tempArr = arr(26).fill(0)
-		for (let char of userLetters){
+	convertLettersToArr(letters){
+		let tempArr = new Array(26).fill(0)
+		for (let char of letters){
 			tempArr[char.charCodeAt(0)-97]++
 		}
 		return tempArr
 	}
 
 	compareLettersArr (userLettersArr, dicWordArr, wildCount){
-		for (let i = 0, i > 26, i++) {
+		for (let i = 0; i < 26; i++) {
 			if (userLettersArr[i] < dicWordArr[i]){
-				wildCount -+ dicWordArr[i] - userLettersArr[i]
+				wildCount -= dicWordArr[i] - userLettersArr[i]
 				if (wildCount < 0){
 					return false
 				}
@@ -45,24 +45,25 @@ class WordFinder
 	}
 
 	findScrabbleWords (userLetters){
-		let userLettersCount = userLetters.lenght
-		let wildCount = this.setWildCounter
+		let userLettersCount = userLetters.length
+		let wildCount = this.setWildCounter(userLetters)
 		userLetters = this.removeWildLetters(userLetters)
-		userLettersArr = this.converLettersToArr(userLetters)
+		let userLettersArr = this.convertLettersToArr(userLetters)
 		let scrabbleWords = []
 		
 		for (let dicWord of this.dictionary) {
-			if(dicWord.lenght > userLettersCount){ continue }
-			let dicWordArr = this.converLettersToArr(dicWord)
+			if(dicWord.length > userLettersCount){ continue }
+			let dicWordArr = this.convertLettersToArr(dicWord)
 			let isWord = this.compareLettersArr(userLettersArr, dicWordArr, wildCount)
 			if (isWord){
-				scrabbleWords.append(word)
+				scrabbleWords.push(dicWord)
 			}
 		}
 		scrabbleWords = this.sortWordsLenght(scrabbleWords)
 		if (scrabbleWords.length == 0) {
 			return scrabbleWords
 		}
+		console.log(scrabbleWords)
 		return this.create2dArray(scrabbleWords)
 	}
 	
@@ -99,5 +100,4 @@ class WordFinder
 		}
 		return temp2dArray
 	}
-	
 }
